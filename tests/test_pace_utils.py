@@ -1,14 +1,15 @@
 import unittest
 
-from utils import Calculator
+from utils import Calculator, CalculatorError
 
 
 class TestCalculator(unittest.TestCase):
     def test_init_calculator(self):
         calc = Calculator(5000)
         self.assertEqual(5000, calc.distance)
-        # TODO написать проверку
-        #calc = Calculator('ddd')              #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+        with self.assertRaises(CalculatorError):        #Чтобы "поймать" ошибку, используем with self.assertRaises.....
+            calc = Calculator('ddd')
 
     def test_calc_temp(self):
         calc = Calculator(5000)

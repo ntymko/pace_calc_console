@@ -1,5 +1,8 @@
 class Calculator:
     def __init__(self, distance):
+        if type(distance) != int:
+            raise CalculatorError('Неверный тип дистанции')
+
         self.distance = int(distance)
 
     def calc_temp(self, time_sec):                            #Расчет темпа в СЕКУНДАХ!!!!!!
@@ -17,4 +20,11 @@ class Calculator:
     def calc_speed(self, temp_sec):                            #Расчет скорости
         u = 3600 / temp_sec
         return u
+
+
+
+class CalculatorError(Exception):
+    pass
+
+
 
