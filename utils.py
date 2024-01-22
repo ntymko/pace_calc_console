@@ -1,5 +1,3 @@
-import time
-
 class Calculator:
     def __init__(self, distance):
         self.distance = int(distance)
