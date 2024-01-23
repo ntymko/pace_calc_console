@@ -5,6 +5,8 @@ from validator import *  # *- значит, импортировать всЁ и
 
 
 name = input(MES_INPUT_HELLO)
+
+# TODO добавить валидатор
 answer_1 = input(name + MES_QUES_1)
 while not date_validator(answer_1):
     answer_1 = input(name + MES_QUES_1)

@@ -1,3 +1,17 @@
+def name_validator(name):
+    if name.isalpha() == True:
+        return True
+
+    name = name.replace(' ', '_')
+    try:
+        a = name.split('_')
+        for i in a:
+            if i.isalpha() != True:
+                return False
+        return True
+    except:
+        return False
+
 def distance_validator(distance):                                                  #Проверка валидности дистанции
     try:
         dist = int(distance)
@@ -13,7 +27,7 @@ def date_validator(answer_1):                                                   
     else:
         return False
 
-def time_validator(t):                                                              #Проверка валидности времени
+def time_validator(t):                                                             #Проверка валидности времени
     parts = t.split(':')
     length = len(parts)
     if 1 == length or length > 3:
@@ -27,7 +41,7 @@ def time_validator(t):                                                          
     else:
         return True
 
-def pace_validator(temp):                                                           #Проверка валидности темпа
+def pace_validator(temp):                                                        #Проверка валидности темпа
     temp_list = temp.split(':')
     if len(temp_list) == 2:
         for i in temp_list:
