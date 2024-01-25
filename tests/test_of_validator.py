@@ -11,6 +11,12 @@ class TestValidators(unittest.TestCase):
         temp = pace_validator('7:61')
         self.assertEqual(False, temp)
 
+        temp = pace_validator('hello')
+        self.assertEqual(False, temp)
+
+        temp = pace_validator('07:07:20')
+        self.assertEqual(False, temp)
+
     def test_time_validator(self):
         t = time_validator('25:45')
         self.assertEqual(True, t)
