@@ -1,6 +1,7 @@
 import unittest
 from validator import *
 
+
 class TestValidators(unittest.TestCase):
 
     def test_pace_validator(self):
@@ -20,21 +21,21 @@ class TestValidators(unittest.TestCase):
         t = time_validator('dfxgchvjbnkm')
         self.assertEqual(False, t)
 
-    def test_date_validator(self):
-        date = date_validator('темп')
-        self.assertEqual(True, date)
+    def test_kind_validator(self):
+        kind = kind_validator('темп')
+        self.assertEqual(True, kind)
 
-        date = date_validator('Темп')
-        self.assertEqual(True, date)
+        kind = kind_validator('Темп')
+        self.assertEqual(True, kind)
 
-        date = date_validator('ТЕМП')
-        self.assertEqual(True, date)
+        kind = kind_validator('ТЕМП')
+        self.assertEqual(True, kind)
 
-        date = date_validator('ewfzxrthcfvyjukbnlio;mp')
-        self.assertEqual(False, date)
+        kind = kind_validator('ewfzxrthcfvyjukbnlio;mp')
+        self.assertEqual(False, kind)
 
-        date = date_validator('7846512354')
-        self.assertEqual(False, date)
+        kind = kind_validator('7846512354')
+        self.assertEqual(False, kind)
 
     def test_distance_validator(self):
         distance = distance_validator('5000')
