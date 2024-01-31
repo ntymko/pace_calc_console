@@ -1,7 +1,10 @@
-class Calculator:
+from converts import *
+
+
+class PaceCalculator:
     def __init__(self, distance):
         if type(distance) != int:
-            raise CalculatorError('Неверный тип дистанции')
+            raise PaceCalculatorError('Неверный тип дистанции')
 
         self.distance = int(distance)
 
@@ -22,7 +25,17 @@ class Calculator:
         u = 3600 / temp_sec
         return u
 
+    def from_speed_calc_temp(self, u):
+        '''Для рачета темпа из скорости'''
+        temp = 3600 / get_str_to_float_speed(u)
+        return round(temp, 2)
 
 
-class CalculatorError(Exception):
+
+
+
+class PaceCalculatorError(Exception):
     pass
+
+# aaa = PaceCalculator(5000)
+# print(aaa.from_speed_calc_temp('4,7'))

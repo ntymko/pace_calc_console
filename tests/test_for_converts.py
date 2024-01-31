@@ -16,5 +16,9 @@ class TestConvers(unittest.TestCase):
         self.assertEqual(470, temp_sec)
 
 
+    def test_get_str_to_float_speed(self):
+        speed = '7,5'
+        speed_new = get_str_to_float_speed(speed)
+        self.assertEqual(7.5, speed_new)
 
 

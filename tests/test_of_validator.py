@@ -66,6 +66,13 @@ class TestValidators(unittest.TestCase):
         name = name_validator('Natalia Tymko')
         self.assertEqual(True, name)
 
+    def test_speed_validator(self):
+        speed = speed_validator('7.5')
+        self.assertEqual(True, speed)
+
+        speed = speed_validator('7,5')
+        self.assertEqual(True, speed)
+
 
 
 

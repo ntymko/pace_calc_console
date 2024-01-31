@@ -55,3 +55,30 @@ def pace_validator(temp):
         return False
 
 
+def speed_validator(u):
+    '''Для проверки валидности скорости'''
+
+    if ',' in u:
+        u_list = u.split(',')
+        for i in u_list:
+            if not i.isdigit():
+                return False
+        return True
+
+    try:
+        type(u) == float
+    except:
+        return False
+    return True
+
+
+
+
+
+
+
+
+
+
+
+
