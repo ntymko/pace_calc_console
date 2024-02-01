@@ -1,5 +1,5 @@
 from converts import *
-
+import enum
 
 class PaceCalculator:
     def __init__(self, distance):
@@ -31,11 +31,22 @@ class PaceCalculator:
         return round(temp, 2)
 
 
+class Kind(enum.Enum):
+    SPEED = 'скорость'
+    TEMP = 'темп'
+    TIME = 'время'
+
+def parse_kind(str_kind):
+    lower_value = str_kind.lower()
+    if lower_value == Kind.SPEED.value:
+        return Kind.SPEED
+    elif lower_value == Kind.TEMP.value:
+        return Kind.TEMP
+    elif lower_value == Kind.TIME.value:
+        return Kind.TIME
+    return None
 
 
 
 class PaceCalculatorError(Exception):
     pass
-
-# aaa = PaceCalculator(5000)
-# print(aaa.from_speed_calc_temp('4,7'))

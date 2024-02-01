@@ -1,5 +1,6 @@
 import unittest
-from utils import PaceCalculator, PaceCalculatorError
+from utils import *
+import enum
 
 
 class TestPaceCalculator(unittest.TestCase):
@@ -7,7 +8,7 @@ class TestPaceCalculator(unittest.TestCase):
         calc = PaceCalculator(5000)
         self.assertEqual(5000, calc.distance)
 
-        with self.assertRaises(PaceCalculatorError):        #Чтобы "поймать" ошибку, используем with self.assertRaises.....
+        with self.assertRaises(PaceCalculatorError):
             calc = PaceCalculator('ddd')
 
     def test_calc_temp(self):
@@ -24,7 +25,25 @@ class TestPaceCalculator(unittest.TestCase):
 
     def test_calc_speed(self):
         calc = PaceCalculator(5000)
-        temp_sec = 4 * 60  # '04:00'
+        temp_sec = 4 * 60
         u = calc.calc_speed(temp_sec)
         self.assertEqual(15.0, u)
+
+    def test_parse_kind(self):
+        str_kind = 'Время'
+        kind = parse_kind(str_kind)
+        self.assertEqual(Kind.TIME, kind)
+
+        str_kind = 'vyjbuinom'
+        kind = parse_kind(str_kind)
+        self.assertEqual(None, kind)
+
+        str_kind = 'ТемП'
+        kind = parse_kind(str_kind)
+        self.assertEqual(Kind.TEMP, kind)
+
+        str_kind = 'скорость'
+        kind = parse_kind(str_kind)
+        self.assertEqual(Kind.SPEED, kind)
+
 

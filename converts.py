@@ -40,7 +40,7 @@ def get_formating_time_by_seconds(seconds):
     return time.strftime(format, time.gmtime(seconds))
 
 
-def get_str_to_float_speed(u):  #'7,4' и '7.4'
+def get_str_to_float_speed(u):
     '''Для перевода скорости из строки в число с плавающей точкой'''
     u_list = []
     new_u = ''
