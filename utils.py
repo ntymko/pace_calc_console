@@ -31,19 +31,19 @@ class PaceCalculator:
         return round(temp, 2)
 
 
-class Kind(enum.Enum):
+class PaceKind(enum.Enum):
     SPEED = 'скорость'
     TEMP = 'темп'
     TIME = 'время'
 
-def parse_kind(str_kind):
+def parse_pace_kind(str_kind):
     lower_value = str_kind.lower()
-    if lower_value == Kind.SPEED.value:
-        return Kind.SPEED
-    elif lower_value == Kind.TEMP.value:
-        return Kind.TEMP
-    elif lower_value == Kind.TIME.value:
-        return Kind.TIME
+    if lower_value == PaceKind.SPEED.value:
+        return PaceKind.SPEED
+    elif lower_value == PaceKind.TEMP.value:
+        return PaceKind.TEMP
+    elif lower_value == PaceKind.TIME.value:
+        return PaceKind.TIME
     return None
 
 

@@ -29,21 +29,21 @@ class TestPaceCalculator(unittest.TestCase):
         u = calc.calc_speed(temp_sec)
         self.assertEqual(15.0, u)
 
-    def test_parse_kind(self):
+    def test_parse_pace_kind(self):
         str_kind = 'Время'
-        kind = parse_kind(str_kind)
-        self.assertEqual(Kind.TIME, kind)
+        kind = parse_pace_kind(str_kind)
+        self.assertEqual(PaceKind.TIME, kind)
 
         str_kind = 'vyjbuinom'
-        kind = parse_kind(str_kind)
+        kind = parse_pace_kind(str_kind)
         self.assertEqual(None, kind)
 
         str_kind = 'ТемП'
-        kind = parse_kind(str_kind)
-        self.assertEqual(Kind.TEMP, kind)
+        kind = parse_pace_kind(str_kind)
+        self.assertEqual(PaceKind.TEMP, kind)
 
         str_kind = 'скорость'
-        kind = parse_kind(str_kind)
-        self.assertEqual(Kind.SPEED, kind)
+        kind = parse_pace_kind(str_kind)
+        self.assertEqual(PaceKind.SPEED, kind)
 
 

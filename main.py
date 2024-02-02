@@ -9,7 +9,7 @@ while not name_validator(name):
     name = input(MES_HELLO)
 
 str_kind = input(name + MES_QUES_KIND)
-kind = parse_kind(str_kind)
+kind = parse_pace_kind(str_kind)
 while kind is None:
     str_kind = input(name + MES_QUES_KIND)
 
@@ -18,7 +18,7 @@ while not distance_validator(s):
     s = input(MES_DISTANCE)
 s = int(s)
 
-if kind == Kind.TEMP:
+if kind == PaceKind.TEMP:
     temp = input(MES_QUES_TEMP)
     while not pace_validator(temp):
         temp = input(name + MES_QUES_KIND)
@@ -29,7 +29,7 @@ if kind == Kind.TEMP:
     print(MES_FINAL_SPEED, round(calculator_1.calc_speed(temp_sec), 2), 'км/ч')
 
 
-elif kind == Kind.TIME:
+elif kind == PaceKind.TIME:
     t = input(MES_QUES_TIME)
     while not time_validator(t):
         t = input(MES_QUES_TIME)
@@ -41,7 +41,7 @@ elif kind == Kind.TIME:
     print(MES_FINAL_SPEED, round(calculator.calc_speed(temp_sec), 2), 'км/ч')
 
 
-elif kind == Kind.SPEED:
+elif kind == PaceKind.SPEED:
     u = input(MES_QUES_SPEED)
     while not speed_validator(u):
         u = input(MES_QUES_SPEED)
