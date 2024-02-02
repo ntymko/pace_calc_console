@@ -8,11 +8,13 @@ jobs:
     steps:
       # Клонируем проект
       - uses: actions/checkout@v4
+
       # Устанавливает Питон нужной версии
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: "3.10"
-      # Проверим, что Питон установлен.
-      - name: Display Python version
-        run: python -c "import sys; print(sys.version)"
+
+      # Запускаем тесты.
+      - name: Tests
+        run: python -m unittests discover -s tests -v
