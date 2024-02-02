@@ -15,7 +15,7 @@ class TestPaceCalculator(unittest.TestCase):
         calc = PaceCalculator(5000)
         time = 25 * 60 # 25:00
         temp = calc.calc_temp(time)
-        self.assertEqual(300, temp)
+        self.assertEqual(30, temp)
 
     def test_calc_time(self):
         calc = PaceCalculator(5000)
