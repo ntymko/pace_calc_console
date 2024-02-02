@@ -17,13 +17,6 @@ def distance_validator(distance):
     except Exception:
         return False
 
-
-
-def kind_validator(answer_1):
-    '''Для проверки соовпадения с 'темп', 'время' или 'скорость'''
-    return answer_1.lower() in ('темп', 'скорость', 'время')
-
-
 def time_validator(t):
     '''Для проверки валидности времени'''
     parts = t.split(':')
@@ -53,5 +46,34 @@ def pace_validator(temp):
             return True
     else:
         return False
+
+
+def speed_validator(u):
+    '''Для проверки валидности скорости'''
+    if type(u) != str:
+        return False
+
+    if ',' in u:
+        u_list = u.split(',')
+        for i in u_list:
+            if not i.isdigit():
+                return False
+        return True
+
+    try:
+        a = float(u)
+    except:
+        return False
+    return True
+
+
+
+
+
+
+
+
+
+
 
 
