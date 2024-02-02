@@ -15,6 +15,9 @@ jobs:
         with:
           python-version: "3.10"
 
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip unittest
+
       # Запускаем тесты.
       - name: Tests
         run: python -m unittests discover -s tests -v
