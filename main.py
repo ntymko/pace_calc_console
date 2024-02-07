@@ -1,8 +1,6 @@
-from utils import *
-from converts import *
 from texts_of_messages import *
 from validator import *
-
+from pace_calc import *
 
 name = input(MES_HELLO)
 while not name_validator(name):
